@@ -13,7 +13,7 @@ namespace ConsoleApp1
             };
 
 
-            //Console.WriteLine(myArray.Get(2));
+            Console.WriteLine(myArray.Get(2));
 
             //myArray.Delete(2);
             //Console.WriteLine(myArray.length);
