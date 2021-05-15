@@ -13,14 +13,14 @@ namespace ArrayImplementation
             };
 
 
-            Console.WriteLine(myArray.Get(2));
+            //Console.WriteLine(myArray.Get(2));
 
-            //myArray.Delete(2);
-            //Console.WriteLine(myArray.length);
-            //foreach (var x in myArray.data)
-            //{
-            //    Console.WriteLine(x);
-            //}
+            myArray.Delete(2);
+            Console.WriteLine(myArray.length);
+            foreach (var x in myArray.data)
+            {
+                Console.WriteLine(x);
+            }
 
             //myArray.Pop();
             //for (var i = 0; i < myArray.length; i++)
@@ -65,15 +65,12 @@ namespace ArrayImplementation
         /// <param name="index"></param>
         public void Delete(long index)
         {
-            if (index < this.length)
-            {
-                for (var i = index; i < this.length - 1; i++)
-                {
-                    this.data[i] = this.data[i + 1];
-                }
-                this.data[this.length - 1] = null;
-                this.length--;
-            }
+          if (index < this.length)
+          {
+              ShiftItems(index);
+              this.data[this.length - 1] = null;
+              this.length--;
+          }
         }
 
         /// <summary>
@@ -95,6 +92,18 @@ namespace ArrayImplementation
             Array.Copy(tempArray, this.data, this.length);
             this.data[this.length] = element;
             this.length++;
+        }
+
+        /// <summary>
+        /// Used to shift items ahead by one index
+        /// </summary>
+        /// <param name="index"></param>
+        public void ShiftItems(long index)
+        {
+            for (var i = index; i < this.length - 1; i++)
+            {
+                this.data[i] = this.data[i + 1];
+            }
         }
     }
 
