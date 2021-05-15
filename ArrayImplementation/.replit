@@ -1,2 +1,2 @@
 language = "csharp"
-run = "mono main.exe"
+run = "mono ArrayImplementation/main.exe"
