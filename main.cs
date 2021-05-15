@@ -46,7 +46,7 @@ namespace ArrayImplementation
         public MyArray()
         {
             this.length = 0;
-            this.data = new object[1];
+            this.data = null;
         }
 
         /// <summary>
